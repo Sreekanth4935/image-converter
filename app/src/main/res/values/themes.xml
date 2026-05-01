@@ -1,4 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <style name="Theme.ImageConverter" parent="android:Theme.Material.Light.NoActionBar" />
+    <!-- Post-splash theme -->
+    <style name="Theme.ImageConverter.Main" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="android:windowBackground">@android:color/white</item>
+        <item name="android:statusBarColor">@color/status_bar_color</item>
+    </style>
+
+    <!-- Splash screen theme - shows app icon on themed background -->
+    <style name="Theme.ImageConverter" parent="Theme.SplashScreen">
+        <item name="windowSplashScreenBackground">@color/splash_background</item>
+        <item name="windowSplashScreenAnimatedIcon">@mipmap/ic_launcher</item>
+        <item name="postSplashScreenTheme">@style/Theme.ImageConverter.Main</item>
+    </style>
 </resources>

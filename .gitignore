@@ -14,3 +14,5 @@ google-services.json
 .DS_Store
 Thumbs.db
 *.log
+build_out.txt
+build_err.txt

@@ -1,46 +1,56 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- Image Converter: Two overlapping images with circular conversion arrow -->
+<!-- Image Converter: Two images with circular conversion arrow - REDESIGNED compact -->
 <vector xmlns:android="http://schemas.android.com/apk/res/android"
     android:width="108dp"
     android:height="108dp"
     android:viewportWidth="108"
     android:viewportHeight="108">
 
-    <!-- Back image card (offset) -->
+    <!-- Back image card (offset up-right) -->
     <path
         android:fillColor="#FFE0B2"
-        android:pathData="M36,30 L72,30 Q74,30 74,32 L74,62 Q74,64 72,64 L36,64 Q34,64 34,62 L34,32 Q34,30 36,30 Z" />
+        android:pathData="M40,28 L72,28 Q74,28 74,30 L74,58 Q74,60 72,60 L40,60 Q38,60 38,58 L38,30 Q38,28 40,28 Z" />
 
-    <!-- Front image card -->
+    <!-- Back card content - simple pattern -->
+    <path
+        android:fillColor="#FFCC80"
+        android:pathData="M42,32 L70,32 L70,56 L42,56 Z" />
+
+    <!-- "JPG" label on back card -->
+    <path
+        android:fillColor="#E65100"
+        android:pathData="M58,33 L69,33 Q70,33 70,34 L70,37 Q70,38 69,38 L58,38 Q57,38 57,37 L57,34 Q57,33 58,33 Z" />
+
+    <!-- Front image card (offset down-left) -->
     <path
         android:fillColor="#FFFFFF"
-        android:pathData="M30,38 L66,38 Q68,38 68,40 L68,70 Q68,72 66,72 L30,72 Q28,72 28,70 L28,40 Q28,38 30,38 Z" />
+        android:pathData="M30,42 L62,42 Q64,42 64,44 L64,72 Q64,74 62,74 L30,74 Q28,74 28,72 L28,44 Q28,42 30,42 Z" />
 
-    <!-- Image content area -->
+    <!-- Front card content area -->
     <path
         android:fillColor="#FFF3E0"
-        android:pathData="M32,42 L64,42 L64,68 L32,68 Z" />
+        android:pathData="M32,46 L60,46 L60,70 L32,70 Z" />
 
-    <!-- Mountain in image -->
+    <!-- Mountain in front image -->
     <path
         android:fillColor="#FF6D00"
-        android:pathData="M32,68 L44,52 L52,60 L58,50 L64,68 Z" />
+        android:pathData="M32,70 L42,54 L50,62 L56,52 L60,70 Z" />
 
-    <!-- Circular arrow (top arc) -->
+    <!-- "PNG" label on front card -->
+    <path
+        android:fillColor="#E65100"
+        android:pathData="M33,43 L44,43 Q45,43 45,44 L45,47 Q45,48 44,48 L33,48 Q32,48 32,47 L32,44 Q32,43 33,43 Z" />
+
+    <!-- Circular conversion arrow (right side) -->
     <path
         android:fillColor="@android:color/transparent"
         android:strokeColor="#FFFFFF"
-        android:strokeWidth="3"
+        android:strokeWidth="3.5"
         android:strokeLineCap="round"
-        android:pathData="M72,78 A14,14 0 1 1 86,60" />
+        android:pathData="M72,66 A10,10 0 1 1 78,56" />
 
-    <!-- Arrow head -->
+    <!-- Arrow head pointing right-down -->
     <path
         android:fillColor="#FFFFFF"
-        android:pathData="M84,54 L86,60 L80,60 Z" />
-
-    <!-- Format label "JPG" on back card -->
-    <path
-        android:fillColor="#E65100"
-        android:pathData="M56,33 L70,33 Q71,33 71,34 L71,37 Q71,38 70,38 L56,38 Q55,38 55,37 L55,34 Q55,33 56,33 Z" />
+        android:pathData="M76,50 L78,56 L72,55 Z" />
 </vector>
