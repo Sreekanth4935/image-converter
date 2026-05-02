@@ -1,53 +1,74 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- Image Converter: Two file cards side by side with bold arrow between -->
+<!-- Image Converter: Circular conversion arrows as primary frame,
+     with two stacked image cards centered inside the arrows -->
 <vector xmlns:android="http://schemas.android.com/apk/res/android"
     android:width="108dp"
     android:height="108dp"
     android:viewportWidth="108"
     android:viewportHeight="108">
 
-    <!-- Left file card (source: warm/orange) -->
-    <path
-        android:fillColor="#FFE0B2"
-        android:pathData="M24,34 L46,34 Q48,34 48,36 L48,74 Q48,76 46,76 L24,76 Q22,76 22,74 L22,36 Q22,34 24,34 Z" />
+    <!-- === LAYER 1: Bold circular conversion arrows (outer frame) === -->
 
-    <!-- Left card header bar -->
+    <!-- Top arc (right-pointing, clockwise) -->
     <path
-        android:fillColor="#FF8F00"
-        android:pathData="M22,34 L48,34 L48,43 L22,43 Z" />
+        android:fillColor="@android:color/transparent"
+        android:strokeColor="#FFFFFF"
+        android:strokeWidth="5"
+        android:strokeLineCap="round"
+        android:pathData="M36,30 Q54,22 72,30" />
 
-    <!-- Left card inner photo area -->
-    <path
-        android:fillColor="#FFF8E1"
-        android:pathData="M25,46 L45,46 L45,72 L25,72 Z" />
-
-    <!-- Mountain in left card -->
-    <path
-        android:fillColor="#E65100"
-        android:pathData="M25,72 L33,56 L38,64 L43,52 L45,72 Z" />
-
-    <!-- Right file card (target: cool/green) -->
-    <path
-        android:fillColor="#C8E6C9"
-        android:pathData="M62,34 L84,34 Q86,34 86,36 L86,74 Q86,76 84,76 L62,76 Q60,76 60,74 L60,36 Q60,34 62,34 Z" />
-
-    <!-- Right card header bar -->
-    <path
-        android:fillColor="#43A047"
-        android:pathData="M60,34 L86,34 L86,43 L60,43 Z" />
-
-    <!-- Right card inner photo area -->
-    <path
-        android:fillColor="#E8F5E9"
-        android:pathData="M63,46 L83,46 L83,72 L63,72 Z" />
-
-    <!-- Mountain in right card -->
-    <path
-        android:fillColor="#2E7D32"
-        android:pathData="M63,72 L71,56 L76,64 L81,52 L83,72 Z" />
-
-    <!-- Bold conversion arrow between cards (centered at x=54, y=55) -->
+    <!-- Top arc arrowhead (pointing right-down) -->
     <path
         android:fillColor="#FFFFFF"
-        android:pathData="M49,50 L55,50 L55,44 L63,55 L55,66 L55,60 L49,60 Z" />
+        android:pathData="M68,24 L76,30 L68,36 Z" />
+
+    <!-- Bottom arc (left-pointing, clockwise) -->
+    <path
+        android:fillColor="@android:color/transparent"
+        android:strokeColor="#FFFFFF"
+        android:strokeWidth="5"
+        android:strokeLineCap="round"
+        android:pathData="M72,78 Q54,86 36,78" />
+
+    <!-- Bottom arc arrowhead (pointing left-up) -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M40,72 L32,78 L40,84 Z" />
+
+    <!-- === LAYER 2: Two stacked image cards (centered inside arrows) === -->
+
+    <!-- Back card (source format - warm/orange, offset up-right) -->
+    <path
+        android:fillColor="#FFE0B2"
+        android:pathData="M42,34 L72,34 Q74,34 74,36 L74,62 Q74,64 72,64 L42,64 Q40,64 40,62 L40,36 Q40,34 42,34 Z" />
+
+    <!-- Back card orange header -->
+    <path
+        android:fillColor="#FF8F00"
+        android:pathData="M40,34 L74,34 L74,41 L40,41 Z" />
+
+    <!-- Front card (target format - cool/green, offset down-left) -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M32,44 L62,44 Q64,44 64,46 L64,72 Q64,74 62,74 L32,74 Q30,74 30,72 L30,46 Q30,44 32,44 Z" />
+
+    <!-- Front card green header -->
+    <path
+        android:fillColor="#43A047"
+        android:pathData="M30,44 L64,44 L64,51 L30,51 Z" />
+
+    <!-- Front card inner photo area -->
+    <path
+        android:fillColor="#E8F5E9"
+        android:pathData="M33,54 L61,54 L61,71 L33,71 Z" />
+
+    <!-- Mountain in front card -->
+    <path
+        android:fillColor="#2E7D32"
+        android:pathData="M33,71 L42,58 L49,64 L56,54 L61,71 Z" />
+
+    <!-- Sun in front card -->
+    <path
+        android:fillColor="#FFEB3B"
+        android:pathData="M55,58 m-2.5,0 a2.5,2.5 0,1 1,5 0 a2.5,2.5 0,1 1,-5 0" />
 </vector>
