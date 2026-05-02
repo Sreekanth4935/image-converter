@@ -1,43 +1,53 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- Image Converter: Single centered image card with bold swap arrows -->
+<!-- Image Converter: Two file cards side by side with bold arrow between -->
 <vector xmlns:android="http://schemas.android.com/apk/res/android"
     android:width="108dp"
     android:height="108dp"
     android:viewportWidth="108"
     android:viewportHeight="108">
 
-    <!-- Main image card (centered) -->
+    <!-- Left file card (source: warm/orange) -->
+    <path
+        android:fillColor="#FFE0B2"
+        android:pathData="M24,34 L46,34 Q48,34 48,36 L48,74 Q48,76 46,76 L24,76 Q22,76 22,74 L22,36 Q22,34 24,34 Z" />
+
+    <!-- Left card header bar -->
+    <path
+        android:fillColor="#FF8F00"
+        android:pathData="M22,34 L48,34 L48,43 L22,43 Z" />
+
+    <!-- Left card inner photo area -->
+    <path
+        android:fillColor="#FFF8E1"
+        android:pathData="M25,46 L45,46 L45,72 L25,72 Z" />
+
+    <!-- Mountain in left card -->
+    <path
+        android:fillColor="#E65100"
+        android:pathData="M25,72 L33,56 L38,64 L43,52 L45,72 Z" />
+
+    <!-- Right file card (target: cool/green) -->
+    <path
+        android:fillColor="#C8E6C9"
+        android:pathData="M62,34 L84,34 Q86,34 86,36 L86,74 Q86,76 84,76 L62,76 Q60,76 60,74 L60,36 Q60,34 62,34 Z" />
+
+    <!-- Right card header bar -->
+    <path
+        android:fillColor="#43A047"
+        android:pathData="M60,34 L86,34 L86,43 L60,43 Z" />
+
+    <!-- Right card inner photo area -->
+    <path
+        android:fillColor="#E8F5E9"
+        android:pathData="M63,46 L83,46 L83,72 L63,72 Z" />
+
+    <!-- Mountain in right card -->
+    <path
+        android:fillColor="#2E7D32"
+        android:pathData="M63,72 L71,56 L76,64 L81,52 L83,72 Z" />
+
+    <!-- Bold conversion arrow between cards (centered at x=54, y=55) -->
     <path
         android:fillColor="#FFFFFF"
-        android:pathData="M34,34 L74,34 Q76,34 76,36 L76,74 Q76,76 74,76 L34,76 Q32,76 32,74 L32,36 Q32,34 34,34 Z" />
-
-    <!-- Inner photo area -->
-    <path
-        android:fillColor="#FFF3E0"
-        android:pathData="M36,38 L72,38 L72,72 L36,72 Z" />
-
-    <!-- Mountain scene -->
-    <path
-        android:fillColor="#BF360C"
-        android:pathData="M36,72 L48,52 L56,62 L64,48 L72,72 Z" />
-
-    <!-- Sun -->
-    <path
-        android:fillColor="#FFEB3B"
-        android:pathData="M63,44 m-3,0 a3,3 0,1 1,6 0 a3,3 0,1 1,-6 0" />
-
-    <!-- Horizontal swap arrows overlaid (centered on image) -->
-    <!-- Left arrow -->
-    <path
-        android:fillColor="#FFFFFF"
-        android:strokeColor="#E65100"
-        android:strokeWidth="1.5"
-        android:pathData="M38,54 L50,54 L50,49 L56,55 L50,61 L50,56 L38,56 Z" />
-
-    <!-- Right arrow -->
-    <path
-        android:fillColor="#FFFFFF"
-        android:strokeColor="#E65100"
-        android:strokeWidth="1.5"
-        android:pathData="M70,54 L58,54 L58,49 L52,55 L58,61 L58,56 L70,56 Z" />
+        android:pathData="M49,50 L55,50 L55,44 L63,55 L55,66 L55,60 L49,60 Z" />
 </vector>
