@@ -75,5 +75,6 @@ See the `dev-docs/` folder for:
 - Execution plan
 - Development history
 - Testing log
+- Test cases and QA tracking
 - Play Store compliance notes
 - Pre-release checklist

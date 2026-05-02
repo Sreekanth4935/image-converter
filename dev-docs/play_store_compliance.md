@@ -1,6 +1,7 @@
 # Image Converter: Play Store Compliance
 
 *Created: 2026-05-01*
+*Last updated: 2026-05-02*
 
 This document tracks Play Store policy compliance for Image Converter.
 
@@ -45,6 +46,10 @@ The initial version has no special permissions. Future versions will add only wh
 - No ad covering primary content
 - Rate-limited interstitials (max 1 per 3 minutes)
 - Banner ads only on safe surfaces
+- Native Advanced video ads only on safe content surfaces with visible `Ad` label, AdChoices, and MediaView
+- Banner, interstitial, native, and native video integrations must use Google demo/test ad units until the app is feature-complete and release-approved
+- Debug builds must never request live ads
+- Production ad unit IDs require a separate release-readiness review covering consent, privacy policy, frequency caps, and placement QA
 
 ## 5. Data Safety
 

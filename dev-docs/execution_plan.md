@@ -1,10 +1,31 @@
 # Image Converter: Execution Plan
 
 *Created: 2026-05-01*
-*Last updated: 2026-05-01*
-*Research pass: 2026-05-01*
+*Last updated: 2026-05-02*
+*Research pass: 2026-05-02*
 
 This plan turns the starter project into an offline image converter with a clean, premium workflow. The differentiator is privacy: conversion happens on device, selected files only, no cloud server.
+
+## Agent Execution Contract
+
+When Antigravity/Codex is asked to complete one day or a range of days, it must treat this file as the product and engineering source of truth.
+
+- Read `product.md`, `features.md`, `ui_system.md`, `play_store_compliance.md`, `testing_log.md`, `test_cases.md`, and this file before changing code.
+- Implement only the requested day range unless a dependency from an earlier day is missing; document any unavoidable prerequisite work.
+- Before coding each day, expand that day's section in `test_cases.md` with concrete automated and manual test cases.
+- After coding each day, run the automated checks listed in `test_cases.md`, update automated status/evidence, and leave manual status open for the user unless the user explicitly confirms it.
+- Update `history.md`, `testing_log.md`, and `pre-release-checklist.md` whenever a milestone, test pass, or release gate changes.
+- Never mark a day complete if build, install, launch, or the day-specific automated tests fail.
+
+## Quality Bar
+
+- UI must feel premium, fast, and task-first: no landing page, no clutter, no ads before the first successful conversion.
+- Architecture must stay layered: Compose UI, ViewModel/state holder, domain/use cases for conversion, repositories/local output store.
+- State must follow unidirectional data flow; conversion operations expose progress, cancellation, and result state clearly.
+- Data must be local-first. No account, backend, analytics, or cloud dependency unless a future plan explicitly adds it.
+- Conversion correctness beats format count: JPG/PNG/WebP behavior, transparency handling, dimensions, and file size must be testable.
+- Accessibility is part of completion: scalable text, 48dp controls, TalkBack labels for sliders/chips/results, and non-color-only status.
+- Store/UI copy must be honest about supported formats; do not claim broad format support before implementation.
 
 ## Current Status
 
@@ -59,6 +80,19 @@ This is a utility app. Prefer ads plus one-time lifetime unlock first. Subscript
 
 ## Monetization Plan
 
+Ad formats in scope for the full plan:
+
+- **Adaptive banner ads**: Low-priority monetization on safe, non-conversion surfaces after useful content is visible.
+- **Interstitial ads**: Frequency-capped full-screen ads only at natural transitions after successful conversion/save/share; never before selection, during options, preview, active conversion, or near save/share buttons.
+- **Native Advanced video ads**: Premium-looking native ad cards with `MediaView`, visible `Ad` label, AdChoices, CTA, advertiser/icon/headline assets, and lifecycle cleanup.
+
+Hard test-ad rule:
+
+- Until the app is feature-complete, internally QA-passed, and release-ready, every ad integration must use test ads only.
+- Use Google demo ad units during development: Adaptive Banner `ca-app-pub-3940256099942544/9214589741`, Interstitial `ca-app-pub-3940256099942544/1033173712`, Native `ca-app-pub-3940256099942544/2247696110`, Native Video `ca-app-pub-3940256099942544/1044960115`.
+- Production ad unit IDs must not be added to source code, docs, or build config until a separate release-readiness task approves UMP consent, privacy policy, frequency caps, and safe placement testing.
+- Debug builds must never request live ads.
+
 Use AdMob Native Advanced with video-capable media on results and history, not during conversion setup.
 
 Allowed ad placements:
@@ -78,7 +112,7 @@ Blocked ad placements:
 
 Implementation requirements:
 
-- Use test native ad unit during development.
+- Use test ad units for banner, interstitial, native, and native video during development.
 - Clear `Ad` label and visible AdChoices.
 - Use MediaView for image/video native ads.
 - Enable hardware acceleration.
@@ -95,6 +129,15 @@ Implementation requirements:
 - No cloud or upload language unless a backend exists
 
 ## Day-by-Day Plan
+
+Daily definition of done:
+
+- Code for the requested day is implemented and scoped.
+- `./gradlew.bat assembleDebug --console=plain` passes.
+- If a device is connected, `./gradlew.bat installDebug --console=plain` passes and the app launches without crash.
+- Relevant unit/instrumented/UI tests are added or updated for the day's behavior.
+- `dev-docs/test_cases.md` has automated results recorded and manual results left for user verification.
+- `dev-docs/history.md` and `dev-docs/testing_log.md` are updated with evidence.
 
 ### Day 1: Product Grounding
 
@@ -206,21 +249,24 @@ Implementation requirements:
 ### Day 16: Ad Architecture, Test Only
 
 - [ ] Add Google Mobile Ads SDK.
-- [ ] Add native ad wrapper.
+- [ ] Add wrappers/state holders for adaptive banner, interstitial, native, and native video.
 - [ ] Use test ad unit IDs only.
-- [ ] Add lifecycle destroy handling.
+- [ ] Add lifecycle destroy handling for `AdView` and native ads.
+- [ ] Add interstitial frequency cap and natural-transition gate.
 
-### Day 17: Native Ad UI
+### Day 17: Banner and Native Advanced Ad UI
 
-- [ ] Build native ad card for result/history.
+- [ ] Build adaptive banner container for safe lower-content surfaces.
+- [ ] Build native advanced video-capable ad card for result/history.
 - [ ] Include visible `Ad` label, AdChoices, MediaView, CTA.
 - [ ] Keep ad away from save/share buttons.
 - [ ] Add loading/failed state.
 
-### Day 18: Safe Ad Placement
+### Day 18: Safe Ad Placement and Interstitial Gate
 
-- [ ] Place ad below result summary after conversion.
-- [ ] Place ad after history items.
+- [ ] Place banner/native ad below result summary after conversion.
+- [ ] Place banner/native ad after history items.
+- [ ] Show interstitial only after successful conversion/save/share or when leaving Result, never before output is ready.
 - [ ] Add frequency cap.
 - [ ] Verify no ad before first successful conversion.
 

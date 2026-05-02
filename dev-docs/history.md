@@ -1,7 +1,7 @@
 # Image Converter: Development History
 
 *Created: 2026-05-01*
-*Last updated: 2026-05-01*
+*Last updated: 2026-05-02*
 
 > **RULE**: Update this file immediately upon completing any phase or milestone.
 
@@ -36,6 +36,14 @@ This document tracks the day-by-day development progress.
 - **Adaptive icon**: mipmap-anydpi-v26 with foreground + background + monochrome
 - **Round icon**: Supported via ic_launcher_round.xml
 
+### [COMPLETED] Day 2: Execution Plan and QA Contract Upgrade (2026-05-02)
+
+- **Execution plan upgraded**: Added agent execution contract, quality bar, and daily definition of done
+- **QA workflow added**: Created `dev-docs/test_cases.md` with automated/manual test tracking
+- **Manual testing queue**: User device checks are now tracked separately from automated agent checks
+- **Antigravity handoff**: Docs now require test cases to be written before each day of coding and updated after automated verification
+- **Ad plan corrected**: Banner, interstitial, and Native Advanced video ads are now explicitly planned with test-only demo units until release approval
+
 #### Files Created / Updated
 
 | File | Action |
@@ -53,6 +61,7 @@ This document tracks the day-by-day development progress.
 | ui/theme/Theme.kt | Created |
 | viewmodel/MainViewModel.kt | Created |
 | dev-docs/*.md | Created (8 files) |
+| dev-docs/test_cases.md | Created (QA contract and daily test matrix) |
 | res/drawable/ic_launcher_foreground.xml | Created (vector icon) |
 | res/mipmap-anydpi-v26/ic_launcher.xml | Updated (adaptive + monochrome) |
 | res/mipmap-anydpi-v26/ic_launcher_round.xml | Updated (adaptive + monochrome) |
@@ -60,5 +69,5 @@ This document tracks the day-by-day development progress.
 
 ---
 
-**Phase 1 Status: COMPLETE** (Foundation + Device Verification + Icon)
-*Last updated: 2026-05-01*
+**Phase 1 Status: COMPLETE** (Foundation + Device Verification + Icon + QA Contract)
+*Last updated: 2026-05-02*
