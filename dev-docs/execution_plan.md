@@ -4,7 +4,7 @@
 *Last updated: 2026-05-02*
 *Research pass: 2026-05-02*
 
-This plan turns the starter project into an offline image converter with a clean, premium workflow. The differentiator is privacy: conversion happens on device, selected files only, no cloud server.
+This plan turns the starter project into a privacy-first selected-image converter with a clean, premium workflow, not a broad file-converter app. The differentiator is honest local conversion: selected images only, no cloud server, and only formats verified in the Android implementation.
 
 ## Agent Execution Contract
 
@@ -58,7 +58,7 @@ Important constraints:
 
 One-line promise:
 
-Convert JPG, PNG, WebP, and PDF image outputs offline with quality and size controls.
+Convert selected JPG, PNG, and WebP images offline with format choice, transparency handling, quality, resize, preview, and save/share output.
 
 Primary users:
 
@@ -69,14 +69,14 @@ Primary users:
 
 ## Release Strategy
 
-- V1: Single image JPG/PNG/WebP conversion, quality control, resize option, save/share.
-- V1.1: PDF output and better transparency/background controls.
-- V1.2: AdMob Native Advanced after successful conversions.
-- V2: Batch conversion and premium/ad-free option.
+- V1: Single selected-image JPG/PNG/WebP conversion, transparency background handling, quality slider, resize option, preview/result, save/share.
+- V1.1: PDF output only if stable, stronger transparency/background controls, and saved conversion presets.
+- V1.2: AdMob Native Advanced test integration after successful conversions.
+- V2: Batch conversion, HEIC/TIFF/BMP only after platform/library verification, and premium/ad-free option.
 
 Subscription caution:
 
-This is a utility app. Prefer ads plus one-time lifetime unlock first. Subscription only makes sense if recurring value is added, such as maintained format packs, advanced batch workflows, or continuous premium tools.
+This is a privacy-first conversion tool, not a "50+ formats" promise. Prefer ads plus one-time lifetime unlock first. Subscription only makes sense if recurring value is added, such as maintained verified format packs, advanced batch workflows, or continuous premium tools.
 
 ## Monetization Plan
 
@@ -126,6 +126,7 @@ Implementation requirements:
 - Clear input/output format chips
 - Preview before and after
 - Output cards show format, dimensions, file size, transparency/background
+- UI copy must only show JPG, PNG, and WebP as core V1 formats unless implementation support is verified
 - No cloud or upload language unless a backend exists
 
 ## Day-by-Day Plan
@@ -142,8 +143,9 @@ Daily definition of done:
 ### Day 1: Product Grounding
 
 - [ ] Update docs around offline image conversion.
-- [ ] Define v1 formats: JPG, PNG, WebP.
+- [ ] Define v1 formats: JPG, PNG, WebP only.
 - [ ] Define v1 options: quality, resize, background for transparency.
+- [ ] Document why this is not a broad converter: scoped selected-image input, verified formats only, no cloud upload, no 50+ format claims.
 - [ ] Confirm no broad storage permissions.
 
 ### Day 2: Navigation
@@ -203,12 +205,11 @@ Daily definition of done:
 - [ ] Add common presets.
 - [ ] Validate inputs.
 
-### Day 10: PDF Output
+### Day 10: Transparency and Background Polish
 
-- [ ] Add image-to-PDF output if stable.
-- [ ] Support page size: image size, A4, letter.
-- [ ] Add PDF preview placeholder.
-- [ ] If not stable, move PDF to v1.1.
+- [ ] Ensure transparent PNG/WebP inputs render correctly for each supported output format.
+- [ ] Add background color handling when converting transparent images to JPG.
+- [ ] Keep PDF export in v1.1/future unless implementation and tests are stable.
 
 ### Day 11: History
 
